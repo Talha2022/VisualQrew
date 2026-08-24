@@ -7,7 +7,7 @@ const services = [
         label: 'Identity',
         heading: 'Brand Work',
         description: 'We craft bold brand identities — from logos and visual systems to full brand strategies that make you unforgettable.',
-        image: '/assets/home/1.jpeg',
+        image: '/assets/home/split1.jpg',
     },
     {
         number: '02',
@@ -15,7 +15,7 @@ const services = [
         label: 'Intelligence',
         heading: 'AI Work',
         description: 'We build AI-powered visuals, generative worlds, and intelligent creative tools that push the boundaries of what\'s possible.',
-        image: '/assets/home/2.jpeg',
+        image: '/assets/home/split2.jpg',
     },
     {
         number: '03',
@@ -23,7 +23,7 @@ const services = [
         label: 'Direction',
         heading: 'Short Films',
         description: 'We direct and produce short films — cinematic stories that capture real emotion and leave a lasting impression.',
-        image: '/assets/home/3.jpeg',
+        image: '/assets/home/split3.jpg',
     },
 ];
 
@@ -59,8 +59,7 @@ function CardBack({ service }: { service: typeof services[0] }) {
                 transform: 'rotateY(180deg)',
                 backfaceVisibility: 'hidden',
                 WebkitBackfaceVisibility: 'hidden',
-                background: 'rgba(255,255,255,0.03)',
-                backdropFilter: 'blur(16px)',
+                background: 'linear-gradient(to right, #8A1C1C, #95351E 30%, #7C1D1A 70%, #341115 100%)',
             }}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none" />
@@ -177,7 +176,7 @@ export function ServicesSection() {
         <>
             {/* ── Desktop — scroll-driven ── */}
             <div ref={wrapperRef} className="relative h-[300vh] bg-black hidden md:block">
-                <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center bg-black">
+                <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center bg-black" style={{ alignItems: 'center', paddingTop: '8vh' }}>
                     {/* Dot grid */}
                     <div
                         ref={dotGridRef}
@@ -193,24 +192,18 @@ export function ServicesSection() {
                     </div>
 
                     {/* Full blended image */}
-                    <div ref={fullImageRef} className="absolute z-30 overflow-hidden rounded-2xl" style={{ width: '70vw', height: '30vw' }}>
-                        <div className="flex h-full">
-                            {services.map((s, i) => (
-                                <div key={i} className="flex-1 overflow-hidden">
-                                    <img src={s.image} alt={s.heading} className="w-full h-full object-cover" />
-                                </div>
-                            ))}
-                        </div>
+                    <div ref={fullImageRef} className="absolute z-30 overflow-hidden rounded-2xl" style={{ width: '70vw', height: '34vw' }}>
+                        <img src="/assets/home/fullcardimg.jpeg" alt="services" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
 
                     {/* Split cards */}
-                    <div className="relative z-20" style={{ width: '70vw', height: '30vw', perspective: '1600px' }}>
+                    <div className="relative z-20" style={{ width: '70vw', height: '34vw', perspective: '1600px' }}>
                         {/* Card 1 */}
                         <div
                             ref={card1Ref}
                             className="absolute top-0 left-0"
-                            style={{ width: '23.33vw', height: '30vw', opacity: 0, transformStyle: 'preserve-3d' }}
+                            style={{ width: '23.33vw', height: '34vw', opacity: 0, transformStyle: 'preserve-3d' }}
                         >
                             <div ref={front1Ref} className="absolute inset-0 overflow-hidden rounded-l-2xl" style={{ backfaceVisibility: 'hidden' }}>
                                 <img src={services[0].image} className="w-full h-full object-cover" alt="" />
@@ -226,7 +219,7 @@ export function ServicesSection() {
                         <div
                             ref={card2Ref}
                             className="absolute top-0 left-[23.33vw]"
-                            style={{ width: '23.33vw', height: '30vw', opacity: 0, transformStyle: 'preserve-3d' }}
+                            style={{ width: '23.33vw', height: '34vw', opacity: 0, transformStyle: 'preserve-3d' }}
                         >
                             <div ref={front2Ref} className="absolute inset-0 overflow-hidden" style={{ backfaceVisibility: 'hidden' }}>
                                 <img src={services[1].image} className="w-full h-full object-cover" alt="" />
@@ -242,7 +235,7 @@ export function ServicesSection() {
                         <div
                             ref={card3Ref}
                             className="absolute top-0 left-[46.66vw]"
-                            style={{ width: '23.33vw', height: '30vw', opacity: 0, transformStyle: 'preserve-3d' }}
+                            style={{ width: '23.33vw', height: '34vw', opacity: 0, transformStyle: 'preserve-3d' }}
                         >
                             <div ref={front3Ref} className="absolute inset-0 overflow-hidden rounded-r-2xl" style={{ backfaceVisibility: 'hidden' }}>
                                 <img src={services[2].image} className="w-full h-full object-cover" alt="" />
@@ -301,8 +294,7 @@ export function ServicesSection() {
                                     style={{
                                         transform: 'rotateY(180deg)',
                                         backfaceVisibility: 'hidden',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        backdropFilter: 'blur(16px)',
+                                        background: 'linear-gradient(to right, #8A1C1C, #95351E 30%, #7C1D1A 70%, #341115 100%)',
                                         border: '1px solid rgba(255,255,255,0.12)',
                                     }}
                                 >

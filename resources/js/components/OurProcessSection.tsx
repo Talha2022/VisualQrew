@@ -81,7 +81,12 @@ export default function OurProcessSection({
     const small = steps.filter((s) => s.span === "small");
 
     return (
-        <section className="w-full bg-black px-6 py-16 sm:px-10 lg:px-16">
+        <section className="w-full bg-black px-6 py-16 sm:px-10 lg:px-16 relative overflow-hidden">
+            {/* dot grid */}
+            <div
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(circle, #888 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+            />
             <div className="mx-auto max-w-6xl">
                 {/* Header */}
                 <div className="mb-10">

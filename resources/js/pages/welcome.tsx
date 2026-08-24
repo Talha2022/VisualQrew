@@ -1,10 +1,13 @@
 import { Head } from '@inertiajs/react';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import CarouselSection from '@/components/CarouselSection';
 import { ServicesSection } from '@/components/ServicesSection';
+import WhyChooseUs from '@/components/WhyChooseUs';
 import OurProcessSection from '@/components/OurProcessSection';
+import ScrollMorphHero from '@/components/ui/scroll-morph-hero';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
+import FaqSection from '@/components/FaqSection';
+import CtaSection from '@/components/CtaSection';
 
 export default function Welcome() {
     return (
@@ -12,10 +15,15 @@ export default function Welcome() {
             <Head title="Welcome" />
             <Hero />
             <About />
-            <WhyChooseUs />
             <ServicesSection />
+            <WhyChooseUs />
             <OurProcessSection />
-            <CarouselSection />
+            <div className="w-full h-[700px]">
+                <ScrollMorphHero />
+            </div>
+            <TestimonialsSection />
+            <FaqSection />
+            <CtaSection />
         </>
     );
 }

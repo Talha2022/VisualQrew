@@ -41,7 +41,12 @@ const cardVariants = (delay = 0) => ({
 
 export default function About() {
     return (
-        <section className="bg-black px-10 py-8">
+        <section className="bg-black px-10 py-8 relative overflow-hidden">
+            {/* dot grid */}
+            <div
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(circle, #888 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+            />
             {/* Top row */}
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 {/* Left */}
