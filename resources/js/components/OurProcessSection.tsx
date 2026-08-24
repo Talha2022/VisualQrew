@@ -1,29 +1,12 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
-/**
- * OurProcessSection
- * -----------------
- * A dark, editorial bento-grid section for a homepage "process" block —
- * one tall lead card, one wide card, and two smaller cards underneath.
- *
- * Fully self-contained (Tailwind classes only). Swap the `steps` array
- * and `image` URLs for your own content/photography. Everything else
- * (numbering, layout, hover motion) just works.
- */
 export interface ProcessStep {
-    /** Two-digit label, e.g. "01" — encodes order, so keep it sequential */
     number: string;
-    /** Small caption shown opposite the number */
     eyebrow: string;
-    /** Optional large heading shown inside the card (top-aligned cards only) */
     heading?: string;
-    /** Body copy shown near the bottom of the card */
     body: string;
-    /** Background image URL */
     image: string;
-    /** Optional CTA label — renders a pill button over the image */
     cta?: string;
-    /** Grid placement, tuned to mirror the reference layout */
     span: "tall" | "wide" | "small";
 }
 
@@ -80,6 +63,30 @@ export default function OurProcessSection({
     const wide = steps.find((s) => s.span === "wide");
     const small = steps.filter((s) => s.span === "small");
 
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+
+        const handleScroll = () => {
+            const cardWidth = el.scrollWidth / steps.length;
+            const index = Math.round(el.scrollLeft / cardWidth);
+            setActiveIndex(index);
+        };
+
+        el.addEventListener('scroll', handleScroll, { passive: true });
+        return () => el.removeEventListener('scroll', handleScroll);
+    }, [steps.length]);
+
+    const scrollToIndex = (i: number) => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const cardWidth = el.scrollWidth / steps.length;
+        el.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+    };
+
     return (
         <section className="w-full bg-black px-6 py-16 sm:px-10 lg:px-16 relative overflow-hidden">
             {/* dot grid */}
@@ -98,7 +105,7 @@ export default function OurProcessSection({
                     </h2>
                 </div>
 
-                {/* Bento grid — explicit row heights so absolute-positioned card contents are visible */}
+                {/* Desktop bento grid */}
                 <div
                     className="hidden sm:grid gap-3"
                     style={{
@@ -106,15 +113,12 @@ export default function OurProcessSection({
                         gridTemplateRows: "320px 280px",
                     }}
                 >
-                    {/* Tall card — spans both rows on the left */}
                     {tall && (
                         <Card
                             step={tall}
                             style={{ gridColumn: "1", gridRow: "1 / span 2" }}
                         />
                     )}
-
-                    {/* Wide card — spans columns 2–3, row 1 */}
                     {wide && (
                         <Card
                             step={wide}
@@ -122,8 +126,6 @@ export default function OurProcessSection({
                             headingPlacement="top"
                         />
                     )}
-
-                    {/* Two small cards — row 2, columns 2 and 3 */}
                     {small.map((s, i) => (
                         <Card
                             key={s.number}
@@ -133,25 +135,46 @@ export default function OurProcessSection({
                     ))}
                 </div>
 
-                {/* Mobile fallback — stacked cards */}
-                <div className="flex flex-col gap-3 sm:hidden">
-                    {steps.map((s) => (
-                        <Card
-                            key={s.number}
-                            step={s}
-                            className="h-[300px]"
-                            headingPlacement={s.span === "wide" ? "top" : "bottom"}
-                        />
-                    ))}
-                </div>
+                {/* Mobile: swipeable carousel */}
+                <div className="sm:hidden">
+                    <div
+                        ref={scrollRef}
+                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-3 -mx-6 px-6 pb-2"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        {steps.map((s) => (
+                            <div
+                                key={s.number}
+                                className="flex-none w-[80vw] snap-center h-[300px]"
+                            >
+                                <Card
+                                    step={s}
+                                    className="h-full"
+                                    headingPlacement={s.span === "wide" ? "top" : "bottom"}
+                                />
+                            </div>
+                        ))}
+                    </div>
 
-                {/* Mobile fallback — stacked, explicit heights */}
-                <style>{`
-                    @media (max-width: 639px) {
-                        .process-grid { display: flex !important; flex-direction: column; }
-                        .process-grid > * { height: 300px; }
-                    }
-                `}</style>
+                    {/* Navigation dots */}
+                    <div className="flex justify-center gap-2 mt-4">
+                        {steps.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => scrollToIndex(i)}
+                                className="rounded-full transition-all duration-300 focus:outline-none"
+                                style={{
+                                    width: activeIndex === i ? '24px' : '8px',
+                                    height: '8px',
+                                    background: activeIndex === i
+                                        ? 'linear-gradient(90deg, #f97316, #ea580c)'
+                                        : 'rgba(249,115,22,0.3)',
+                                }}
+                                aria-label={`Go to step ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
     );
@@ -180,7 +203,7 @@ function Card({
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
 
-            {/* Gradient overlays for legibility */}
+            {/* Gradient overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30" />
 
             {/* Number — top right */}
