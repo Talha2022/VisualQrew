@@ -1,5 +1,4 @@
 import { motion, type Variants } from 'framer-motion';
-import Header from '@/components/Header';
 
 const services = [
     { number: '01', label: 'Brand Strategy' },
@@ -38,9 +37,6 @@ export default function Hero() {
             >
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 rounded-b-[2.5rem]" />
-
-                {/* Header */}
-                <Header />
 
                 {/* Hero Content — vertically centered, split left/right */}
                 <div className="relative z-10 flex flex-1 w-full items-center justify-between px-10">
