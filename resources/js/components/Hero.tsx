@@ -1,3 +1,4 @@
+import { motion, type Variants } from 'framer-motion';
 import Header from '@/components/Header';
 
 const services = [
@@ -7,10 +8,31 @@ const services = [
     { number: '04', label: 'Creative Direction' },
 ];
 
+const dropIn: Variants = {
+    hidden: { y: '-100%', opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
+    },
+};
+
+const fadeUp = (delay = 0): Variants => ({
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay },
+    },
+});
+
 export default function Hero() {
     return (
-        <div className="min-h-screen bg-black">
-            <section
+        <div className="min-h-screen bg-black overflow-hidden">
+            <motion.section
+                variants={dropIn}
+                initial="hidden"
+                animate="visible"
                 className="relative flex h-[90vh] w-full flex-col bg-cover bg-center bg-no-repeat rounded-b-[2.5rem]"
                 style={{ backgroundImage: "url('/assets/home/herobg.jpeg')" }}
             >
@@ -23,14 +45,24 @@ export default function Hero() {
                 {/* Hero Content — vertically centered, split left/right */}
                 <div className="relative z-10 flex flex-1 w-full items-center justify-between px-10">
                     {/* Left */}
-                    <h1 className="text-[clamp(3rem,8vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-white">
+                    <motion.h1
+                        variants={fadeUp(0.4)}
+                        initial="hidden"
+                        animate="visible"
+                        className="text-[clamp(3rem,8vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-white"
+                    >
                         Visual
                         <br />
                         Crew
-                    </h1>
+                    </motion.h1>
 
                     {/* Right */}
-                    <div className="max-w-xs text-start">
+                    <motion.div
+                        variants={fadeUp(0.6)}
+                        initial="hidden"
+                        animate="visible"
+                        className="max-w-xs text-start"
+                    >
                         <p className="text-xl font-bold leading-snug text-white md:text-2xl">
                             We direct things
                             <br />
@@ -41,11 +73,16 @@ export default function Hero() {
                             <br />
                             and short films.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Bottom services bar */}
-                <div className="relative z-10 flex w-full items-end justify-between px-10 pb-10">
+                <motion.div
+                    variants={fadeUp(0.8)}
+                    initial="hidden"
+                    animate="visible"
+                    className="relative z-10 flex w-full items-end justify-between px-10 pb-10"
+                >
                     {services.map((service) => (
                         <div key={service.number} className="flex flex-col gap-1">
                             <span className="text-xs font-semibold tracking-wider">
@@ -57,8 +94,8 @@ export default function Hero() {
                             </span>
                         </div>
                     ))}
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
         </div>
     );
 }

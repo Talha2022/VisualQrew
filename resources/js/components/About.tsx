@@ -1,10 +1,57 @@
+import { motion } from 'framer-motion';
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = (delay = 0) => ({
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.7, ease, delay },
+    },
+});
+
+const slideLeft = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 0.8, ease },
+    },
+};
+
+const slideRight = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 0.8, ease },
+    },
+};
+
+const cardVariants = (delay = 0) => ({
+    hidden: { y: 60, opacity: 0, scale: 0.95 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.7, ease, delay },
+    },
+});
+
 export default function About() {
     return (
         <section className="bg-black px-10 py-8">
             {/* Top row */}
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 {/* Left */}
-                <div className="md:w-1/2">
+                <motion.div
+                    className="md:w-1/2"
+                    variants={slideLeft}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                     <span className="text-xs font-semibold text-orange-500">
                         Behind the Designs
                     </span>
@@ -15,10 +62,16 @@ export default function About() {
                         <br />
                         Make Life Simpler
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Right */}
-                <div className="flex flex-col gap-4 md:w-[42%] md:pt-1 md:ml-auto">
+                <motion.div
+                    className="flex flex-col gap-4 md:w-[42%] md:pt-1 md:ml-auto"
+                    variants={slideRight}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                     <p className="text-sm font-semibold leading-snug text-white md:text-base">
                         I'm a product designer focused on
                         building clean, intuitive interfaces
@@ -50,7 +103,7 @@ export default function About() {
                             </span>
                         </a>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Bottom — 3 image cards */}
@@ -60,9 +113,13 @@ export default function About() {
                     '/assets/home/2.jpeg',
                     '/assets/home/3.jpeg',
                 ].map((src, i) => (
-                    <div
+                    <motion.div
                         key={i}
                         className="overflow-hidden rounded-2xl bg-neutral-900 aspect-[3/3.5]"
+                        variants={cardVariants(i * 0.15)}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <img
                             src={src}
@@ -72,7 +129,7 @@ export default function About() {
                                 (e.currentTarget as HTMLImageElement).style.display = 'none';
                             }}
                         />
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
