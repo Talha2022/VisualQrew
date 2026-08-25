@@ -19,7 +19,7 @@ const brandWork = [
         hoverText: 'VISUAL IDENTITY',
         label: 'Brand Work',
         year: '2025',
-        href: '#',
+        href: '/work/visual-identity-nexora',
     },
     {
         src: '/assets/home/1.jpeg',

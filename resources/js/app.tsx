@@ -9,22 +9,19 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
-    resolve: (name) => {
-        const page = resolvePageComponent(
+    resolve: async (name) => {
+        const module = await resolvePageComponent(
             `./pages/${name}.tsx`,
             import.meta.glob('./pages/**/*.tsx'),
-        );
+        ) as any;
 
-        // Attach AppLayout as the default layout for every page
-        // unless the page itself defines its own `layout` property.
-        page.then((module: any) => {
-            if (!module.default.layout) {
-                module.default.layout = (page: React.ReactNode) =>
-                    createElement(AppLayout, null, page);
-            }
-        });
+        // Apply AppLayout to every page unless the page opts out with layout = null
+        if (module.default.layout === undefined) {
+            module.default.layout = (page: React.ReactNode) =>
+                createElement(AppLayout, null, page);
+        }
 
-        return page;
+        return module;
     },
     setup({ el, App, props }) {
         createRoot(el).render(createElement(App, props));
