@@ -8,6 +8,7 @@ import ScrollMorphHero from '@/components/ui/scroll-morph-hero';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
+import Footer from '@/components/Footer';
 
 export default function Welcome() {
     return (
@@ -24,6 +25,7 @@ export default function Welcome() {
             <TestimonialsSection />
             <FaqSection />
             <CtaSection />
+            <Footer />
         </>
     );
 }

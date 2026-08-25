@@ -59,7 +59,7 @@ export default function FaqSection() {
                             </span>
                             <div className="w-8 h-px bg-white/25" />
                         </div>
-                        <h2 className="text-3xl font-extralight tracking-tight text-white sm:text-4xl leading-tight">
+                        <h2 className="text-3xl font-extralight uppercase tracking-tight text-white sm:text-4xl leading-tight">
                             Questions people usually ask
                             <span className="block text-white/30">before we start making things.</span>
                         </h2>

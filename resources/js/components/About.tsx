@@ -83,7 +83,7 @@ export default function About() {
                     <span className="text-xs font-semibold text-orange-500">
                         Behind the Designs
                     </span>
-                    <h2 className="mt-2 text-2xl font-extrabold leading-tight text-white md:text-3xl">
+                    <h2 className="mt-2 text-2xl font-extrabold uppercase leading-tight text-white md:text-3xl">
                         Shaping
                         <br />
                         Experiences That

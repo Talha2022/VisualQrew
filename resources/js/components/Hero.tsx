@@ -38,33 +38,34 @@ export default function Hero() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 rounded-b-[2.5rem]" />
 
-                {/* Hero Content — vertically centered, split left/right */}
-                <div className="relative z-10 flex flex-1 w-full items-center justify-between px-10">
-                    {/* Left */}
+                {/* Hero Content */}
+                <div className="relative z-10 flex flex-1 w-full flex-col justify-center px-6 md:flex-row md:items-center md:justify-between md:px-10">
+
+                    {/* Title */}
                     <motion.h1
                         variants={fadeUp(0.4)}
                         initial="hidden"
                         animate="visible"
-                        className="text-[clamp(3rem,8vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-white"
+                        className="text-[clamp(3.5rem,16vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-white"
                     >
                         Visual
                         <br />
                         Crew
                     </motion.h1>
 
-                    {/* Right */}
+                    {/* Subtitle — below title on mobile, right side on desktop */}
                     <motion.div
                         variants={fadeUp(0.6)}
                         initial="hidden"
                         animate="visible"
-                        className="max-w-xs text-start"
+                        className="mt-6 md:mt-0 md:max-w-xs"
                     >
-                        <p className="text-xl font-bold leading-snug text-white md:text-2xl">
+                        <p className="text-lg font-bold leading-snug text-white md:text-2xl">
                             We direct things
                             <br />
                             into existence.
                         </p>
-                        <p className="mt-3 text-sm text-white/60 leading-relaxed">
+                        <p className="mt-2 text-sm text-white/60 leading-relaxed">
                             From brand ideas to artificial worlds
                             <br />
                             and short films.
@@ -77,19 +78,33 @@ export default function Hero() {
                     variants={fadeUp(0.8)}
                     initial="hidden"
                     animate="visible"
-                    className="relative z-10 flex w-full items-end justify-between px-10 pb-10"
+                    className="relative z-10 w-full px-6 pb-8 md:px-10 md:pb-10"
                 >
-                    {services.map((service) => (
-                        <div key={service.number} className="flex flex-col gap-1">
-                            <span className="text-xs font-semibold tracking-wider">
-                                <span className="text-orange-500">#</span>
-                                <span className="text-white">{service.number}</span>
-                            </span>
-                            <span className="text-sm text-white/70">
-                                {service.label}
-                            </span>
-                        </div>
-                    ))}
+                    {/* Mobile: 2×2 grid */}
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-4 md:hidden">
+                        {services.map((service) => (
+                            <div key={service.number} className="flex flex-col gap-1">
+                                <span className="text-xs font-semibold tracking-wider">
+                                    <span className="text-orange-500">#</span>
+                                    <span className="text-white">{service.number}</span>
+                                </span>
+                                <span className="text-sm text-white/70">{service.label}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop: single row */}
+                    <div className="hidden md:flex items-end justify-between">
+                        {services.map((service) => (
+                            <div key={service.number} className="flex flex-col gap-1">
+                                <span className="text-xs font-semibold tracking-wider">
+                                    <span className="text-orange-500">#</span>
+                                    <span className="text-white">{service.number}</span>
+                                </span>
+                                <span className="text-sm text-white/70">{service.label}</span>
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
             </motion.section>
         </div>
