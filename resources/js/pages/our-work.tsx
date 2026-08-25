@@ -98,7 +98,7 @@ export default function OurWork() {
         <>
             <Head title="Our Work" />
 
-
+            <div className="bg-black min-h-screen">
             {/* Brand Work */}
             <ProjectsShowcase
                 sectionLabel="Brand Work"
@@ -118,6 +118,7 @@ export default function OurWork() {
             />
 
             <Footer />
+            </div>
         </>
     );
 }

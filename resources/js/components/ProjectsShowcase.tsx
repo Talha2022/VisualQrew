@@ -61,7 +61,7 @@ export default function ProjectsShowcase({ projects = defaultProjects, sectionLa
     const label = sectionLabel ?? 'Projects';
 
     return (
-        <section className="w-full bg-[#111111] px-6 py-20 md:px-12 md:py-24">
+        <section className="w-full bg-black px-6 py-20 md:px-12 md:py-24">
             {/* Header label */}
             <p className="mb-16 font-mono text-xs tracking-widest text-white/60 uppercase">
                 {label} ({projects.length.toString().padStart(2, '0')})
