@@ -80,14 +80,14 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    <a href="#" className="text-white/80 text-sm hover:text-white transition-colors">
+                    <a href="/" className="text-white/80 text-sm hover:text-white transition-colors">
                         Home
                     </a>
                     <a href="#" className="text-white/80 text-sm hover:text-white transition-colors">
                         About
                     </a>
-                    <a href="#" className="text-white/80 text-sm hover:text-white transition-colors">
-                        Projects
+                    <a href="/our-work" className="text-white/80 text-sm hover:text-white transition-colors">
+                        Our Work
                     </a>
 
                     <a
@@ -140,10 +140,14 @@ export default function Header() {
 
                 {/* Nav links */}
                 <nav className="flex flex-col gap-1 px-6 pt-8 flex-1">
-                    {['Home', 'About', 'Projects'].map((item, i) => (
+                    {[
+                        { label: 'Home', href: '/' },
+                        { label: 'About', href: '#' },
+                        { label: 'Our Work', href: '/our-work' },
+                    ].map(({ label, href }, i) => (
                         <a
-                            key={item}
-                            href="#"
+                            key={label}
+                            href={href}
                             className="text-white/80 uppercase font-extrabold py-3 hover:text-white hover:pl-2 transition-all duration-200"
                             style={{
                                 fontSize: 'clamp(2.8rem, 12vw, 5rem)',
@@ -151,7 +155,7 @@ export default function Header() {
                             }}
                             onClick={() => setMobileOpen(false)}
                         >
-                            {item}
+                            {label}
                         </a>
                     ))}
                 </nav>
