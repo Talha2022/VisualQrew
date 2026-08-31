@@ -83,7 +83,7 @@ export default function Header() {
                     <a href="/" className="text-white/80 text-sm hover:text-white transition-colors">
                         Home
                     </a>
-                    <a href="#" className="text-white/80 text-sm hover:text-white transition-colors">
+                    <a href="/about" className="text-white/80 text-sm hover:text-white transition-colors">
                         About
                     </a>
                     <a href="/our-work" className="text-white/80 text-sm hover:text-white transition-colors">
@@ -91,7 +91,7 @@ export default function Header() {
                     </a>
 
                     <a
-                        href="#"
+                        href="/contact"
                         className="flex items-center gap-2 rounded-full bg-white pl-5 pr-2 py-2 text-sm font-semibold text-gray-900 hover:bg-white/90 transition-colors"
                     >
                         Get in touch
@@ -142,7 +142,7 @@ export default function Header() {
                 <nav className="flex flex-col gap-1 px-6 pt-8 flex-1">
                     {[
                         { label: 'Home', href: '/' },
-                        { label: 'About', href: '#' },
+                        { label: 'About', href: '/about' },
                         { label: 'Our Work', href: '/our-work' },
                     ].map(({ label, href }, i) => (
                         <a
@@ -163,7 +163,7 @@ export default function Header() {
                 {/* Bottom CTA */}
                 <div className="px-6 pb-12">
                     <a
-                        href="#"
+                        href="/contact"
                         className="flex items-center justify-center gap-2 rounded-full bg-white pl-5 pr-2 py-3 text-sm font-semibold text-gray-900 hover:bg-white/90 transition-colors"
                         onClick={() => setMobileOpen(false)}
                     >
