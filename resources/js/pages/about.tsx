@@ -17,7 +17,7 @@ export default function About() {
                                 <div className="aspect-[3/4] overflow-hidden bg-neutral-800">
                                     <img
                                         src="/assets/home/1.jpeg"
-                                        alt="VisualCrew"
+                                        alt="VisualQrew"
                                         className="w-full h-full object-cover grayscale"
                                     />
                                 </div>
@@ -31,11 +31,11 @@ export default function About() {
                                 <div className="flex flex-col gap-5">
                                     <p className="text-white font-light leading-relaxed"
                                         style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1rem)' }}>
-                                        VisualCrew is a studio built on the notion that any idea can be realized. The creative industry innovators — directors, designers, and storytellers — took bold visions from concept into the lives of every brand and filmmaker in the creative community. VisualCrew started as a small collective and continued growing as a professional creative studio throughout its early years before shifting focus to digital evolution.
+                                        VisualQrew is a studio built on the notion that any idea can be realized. The creative industry innovators — directors, designers, and storytellers — took bold visions from concept into the lives of every brand and filmmaker in the creative community. VisualQrew started as a small collective and continued growing as a professional creative studio throughout its early years before shifting focus to digital evolution.
                                     </p>
                                     <p className="text-white font-light leading-relaxed"
                                         style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1rem)' }}>
-                                        Today, the studio sits at the intersection of brand, design, tech, and pop culture. As it grows into the second decade, VisualCrew continues to push the boundaries of visual storytelling — from AI-powered campaigns to short films and full brand identities.
+                                        Today, the studio sits at the intersection of brand, design, tech, and pop culture. As it grows into the second decade, VisualQrew continues to push the boundaries of visual storytelling — from AI-powered campaigns to short films and full brand identities.
                                     </p>
                                     <p className="text-white font-light leading-relaxed"
                                         style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1rem)' }}>
@@ -55,7 +55,7 @@ export default function About() {
                                     </p>
                                     <p className="text-white font-light leading-snug"
                                         style={{ fontSize: 'clamp(1rem, 1.8vw, 1.3rem)' }}>
-                                        VisualCrew's brand embodies the lifestyle of a studio and creator in the creative entrepreneur community.
+                                        VisualQrew's brand embodies the lifestyle of a studio and creator in the creative entrepreneur community.
                                     </p>
                                 </div>
                             </div>

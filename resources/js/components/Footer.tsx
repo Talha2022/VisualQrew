@@ -42,11 +42,11 @@ export default function Footer() {
                     {/* Left — brand */}
                     <div className="flex-shrink-0">
                         <h2 className="text-4xl font-medium text-white tracking-tight">
-                            VisualCrew
+                            VisualQrew
                         </h2>
                         <div className="mt-4 space-y-1">
                             <p className="text-sm text-white/50">Beirut — Lebanon</p>
-                            <p className="text-sm text-white/50">hello@visualcrew.com</p>
+                            <p className="text-sm text-white/50">hello@visualqrew.com</p>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ export default function Footer() {
                 {/* Bottom copyright — pushed to bottom */}
                 <div className="mt-auto pt-16 flex items-center gap-2">
                     <span className="text-xs font-semibold text-white">
-                        © 2026 VisualCrew.
+                        © 2026 VisualQrew.
                     </span>
                     <span className="text-xs text-cyan-300/70">
                         All rights reserved.

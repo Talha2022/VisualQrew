@@ -178,10 +178,10 @@ export default function Contact() {
                                 <div>
                                     <p className="font-mono text-[9px] tracking-[0.3em] text-white/30 uppercase mb-2">Email</p>
                                     <a
-                                        href="mailto:hello@visualcrew.com"
+                                        href="mailto:hello@visualqrew.com"
                                         className="text-white/70 text-sm font-light hover:text-white transition-colors duration-300"
                                     >
-                                        hello@visualcrew.com
+                                        hello@visualqrew.com
                                     </a>
                                 </div>
 

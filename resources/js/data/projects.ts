@@ -66,13 +66,13 @@ export const projects: ProjectData[] = [
         credits: {
             paragraphs: [
                 'By combining Nexora\'s creative vision with their studio expertise, this collaboration serves as a valuable example of how strategic partnerships, compelling design, and a multi-channel marketing approach can enhance brand awareness and ultimately drive successful product launches.',
-                'For consultation services in brand development, creative direction, or visual identity, please contact VisualCrew at hello@visualcrew.com.',
+                'For consultation services in brand development, creative direction, or visual identity, please contact VisualQrew at hello@visualqrew.com.',
             ],
             items: [
-                { label: 'Creative Direction', value: 'VisualCrew' },
+                { label: 'Creative Direction', value: 'VisualQrew' },
                 { label: 'Design', value: 'Visual Crew Studio' },
                 { label: 'Copy', value: 'Nexora Team' },
-                { label: 'Production', value: 'VisualCrew' },
+                { label: 'Production', value: 'VisualQrew' },
                 { label: 'Photography', value: 'Studio Assets' },
             ],
         },

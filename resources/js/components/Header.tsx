@@ -75,7 +75,7 @@ export default function Header() {
             >
                 {/* Logo */}
                 <span className="text-white font-bold text-xl tracking-tight">
-                    VisualCrew
+                    VisualQrew
                 </span>
 
                 {/* Desktop Nav */}
@@ -124,7 +124,7 @@ export default function Header() {
                 {/* Top bar — logo + close */}
                 <div className="flex items-center justify-between px-6 py-5">
                     <span className="text-white font-bold text-xl tracking-tight">
-                        VisualCrew
+                        VisualQrew
                     </span>
                     <button
                         className="flex items-center justify-center h-9 w-9 text-white"

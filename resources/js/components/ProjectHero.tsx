@@ -37,10 +37,10 @@ export default function ProjectHero({
                 </h1>
             </div>
 
-            {/* ── Bottom-right: VisualCrew branding ── */}
+            {/* ── Bottom-right: VisualQrew branding ── */}
             <div className="absolute bottom-7 right-7 md:bottom-8 md:right-10 z-10">
                 <span className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase">
-                    VisualCrew
+                    VisualQrew
                 </span>
             </div>
         </section>
