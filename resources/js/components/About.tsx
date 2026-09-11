@@ -83,7 +83,10 @@ export default function About() {
                     <span className="text-xs font-semibold text-orange-500">
                         Behind the Designs
                     </span>
-                    <h2 className="mt-2 text-2xl font-extrabold uppercase leading-tight text-white md:text-3xl">
+                    <h2
+                        className="mt-2 text-2xl uppercase leading-tight text-white md:text-3xl"
+                        style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 800, letterSpacing: '-0.03em' }}
+                    >
                         Shaping
                         <br />
                         Experiences That

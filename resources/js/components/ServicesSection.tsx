@@ -186,8 +186,8 @@ export function ServicesSection() {
 
                     {/* Heading */}
                     <div className="absolute top-12 z-40 text-center px-4" style={{ opacity: 0 }} id="services-heading">
-                        <h2 className="text-4xl md:text-5xl font-extralight text-white tracking-[0.12em] uppercase">
-                            What We <em className="not-italic font-light text-orange-500">Create</em>
+                        <h2 className="text-4xl md:text-5xl text-white tracking-[0.12em] uppercase" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
+                            What We <em className="not-italic text-orange-500">Create</em>
                         </h2>
                     </div>
 
@@ -257,8 +257,8 @@ export function ServicesSection() {
                     style={{ backgroundImage: 'radial-gradient(circle, #444 1px, transparent 1px)', backgroundSize: '28px 28px' }}
                 />
                 <div className="relative z-10 max-w-xl mx-auto text-center mb-12">
-                    <h2 className="text-3xl font-extralight text-white tracking-[0.12em] uppercase leading-tight">
-                        What We <em className="not-italic font-light text-orange-500">Create</em>
+                    <h2 className="text-3xl text-white tracking-[0.12em] uppercase leading-tight" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
+                        What We <em className="not-italic text-orange-500">Create</em>
                     </h2>
                     <p className="text-white/30 text-[9px] font-mono tracking-[0.2em] uppercase mt-3">Tap a card to view details</p>
                 </div>

@@ -69,7 +69,7 @@ export function PortfolioGallery({
                 {/* Header */}
                 <div className="text-center pt-16 pb-8 px-8">
                     
-                    <h2 className="text-4xl md:text-6xl font-extralight text-white mb-8 tracking-tight">
+                    <h2 className="text-4xl md:text-6xl text-white mb-8 tracking-tight" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
                         {title}
                     </h2>
                     <a

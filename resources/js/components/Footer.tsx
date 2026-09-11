@@ -41,7 +41,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
                     {/* Left — brand */}
                     <div className="flex-shrink-0">
-                        <h2 className="text-4xl font-medium text-white tracking-tight">
+                        <h2 className="text-4xl text-white tracking-tight" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
                             VisualQrew
                         </h2>
                         <div className="mt-4 space-y-1">

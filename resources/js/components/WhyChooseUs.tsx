@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
 
             {/* Heading + social icons on same line */}
             <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold uppercase text-white leading-tight md:text-4xl">
+                <h2 className="text-3xl uppercase text-white leading-tight md:text-4xl" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
                     Meet The Minds
                     <br />
                     <span className="text-white/60">Behind The Work</span>

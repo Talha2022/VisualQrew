@@ -46,11 +46,12 @@ export default function Hero() {
                         variants={fadeUp(0.4)}
                         initial="hidden"
                         animate="visible"
-                        className="text-[clamp(3.5rem,16vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-white"
+                        className="text-[clamp(3.5rem,16vw,7rem)]  leading-none text-white"
+                        style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9 }}
                     >
-                        Visual
+                        visual
                         <br />
-                        Crew
+                        qrew
                     </motion.h1>
 
                     {/* Subtitle — below title on mobile, right side on desktop */}

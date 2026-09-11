@@ -100,7 +100,7 @@ export default function OurProcessSection({
                     <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40">
                         {subtitle}
                     </p>
-                    <h2 className="text-3xl font-semibold uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                    <h2 className="text-3xl uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
                         {title}
                     </h2>
                 </div>

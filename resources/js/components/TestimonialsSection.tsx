@@ -68,7 +68,7 @@ export function TestimonialsSection() {
                         </span>
                         <div className="w-8 h-px bg-white/25" />
                     </div>
-                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight tracking-[0.12em] text-white mb-5 leading-tight uppercase">
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl tracking-[0.12em] text-white mb-5 leading-tight uppercase" style={{ fontFamily: "'Milligram', sans-serif", fontWeight: 900, letterSpacing: '-0.03em' }}>
                         NICE THINGS PEOPLE SAID
                     </h2>
                     <p className="text-white/50 text-sm font-light tracking-[0.2em] uppercase">
